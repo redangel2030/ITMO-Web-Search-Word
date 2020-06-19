@@ -14,14 +14,13 @@ import java.util.concurrent.TimeUnit;
 
 class Main {
     public  static  String siteURL = "https://abit.itmo.ru/page/195/";
-    public static  void  checkSite(String wordToFind)
-    {
+    public static  void  checkSite(String wordToFind) {
         try {
             URL google = new URL(siteURL);
             BufferedReader in = new BufferedReader(new InputStreamReader(google.openStream()));
             String inputLine;
-            while ((inputLine = in.readLine()) != null) { // Process each line.
-                if (inputLine.contains( wordToFind)) // System.out.println(inputLine);
+            while ((inputLine = in.readLine()) != null) { // process each line
+                if (inputLine.contains( wordToFind))
                 {
                     System.out.println( "Yes" );
                     return;
@@ -42,16 +41,16 @@ class Main {
         String str = scan.nextLine();
         System.out.println("Ждите до появления Yes");
 
-        TrustManager[] trustAllCerts = new TrustManager[]{
+        TrustManager[] trustAllCerts = new TrustManager[] {
                 new X509TrustManager() {
                     public java.security.cert.X509Certificate[] getAcceptedIssuers() {
                         return null;
                     }
                     public void checkClientTrusted(java.security.cert.X509Certificate[] certs, String authType) {
-                        //No need to implement.
+                        //no need to implement
                     }
                     public void checkServerTrusted(java.security.cert.X509Certificate[] certs, String authType) {
-                        //No need to implement.
+                        //no need to implement
                     }
                 }
         };
